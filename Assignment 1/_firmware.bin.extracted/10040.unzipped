@@ -1,0 +1,1987 @@
+1<@>
+28<@>&*#@phoneAppGet.htm@#*&2475
+40<@><VWS_FUNCTION (void*)SendWebMetaStr();>
+39<@><VWS_FUNCTION (void*)SendWebCssStr();>
+30<@><TITLE>PHONE APP Info</TITLE>
+31<@><script language="JavaScript">
+53<@><VWS_FUNCTION (void*)getZerotouchValues_phoneAPP();>
+10<@></script>
+8<@></head>
+1<@>
+7<@><body>
+30<@>    <div class="intro_main ">
+50<@>        <p class="intro_title">PHONE APP Info</p>
+38<@>        <p class="intro_content"></p>
+11<@>    </div>
+50<@>    <div class="data_common data_common_notitle">
+28<@>        <table width="600">
+35<@>            <tr bgcolor="#EEEEEE">
+37<@>                <th>MAC Address</th>
+21<@>                <td>
+59<@>                    <VWS_SCREEN (char*)xscrnMacAddress[];>
+22<@>                </td>
+18<@>            </tr>
+35<@>            <tr bgcolor="#EEEEEE">
+40<@>                <th>Upstream Speed</th>
+21<@>                <td>
+56<@>                    <VWS_SCREEN (char*) xscrnAdslUp[];>
+22<@>                </td>
+18<@>            </tr>
+35<@>            <tr bgcolor="#EEEEEE">
+42<@>                <th>Downstream Speed</th>
+21<@>                <td>
+58<@>                    <VWS_SCREEN (char*) xscrnAdslDown[];>
+22<@>                </td>
+18<@>            </tr>
+35<@>            <tr bgcolor="#EEEEEE">
+49<@>                <th>SNR Margin Down Stream </th>
+21<@>                <td>
+60<@>                    <VWS_SCREEN (char*)xscrnAdslSnrNear[];>
+22<@>                </td>
+18<@>            </tr>
+35<@>            <tr bgcolor="#EEEEEE">
+47<@>                 <th>SNR Margin Up Stream</th>
+22<@>                 <td>
+59<@>                    <VWS_SCREEN (char*)xscrnAdslSnrFar[];>
+23<@>                 </td>
+18<@>            </tr>
+35<@>            <tr bgcolor="#EEEEEE">
+49<@>                <th>Attenuation Down Stream</th>
+21<@>                <td>
+62<@>                    <VWS_SCREEN (char*)xscrnAdslAttenNear[];>
+22<@>                </td>
+18<@>            </tr>
+35<@>            <tr bgcolor="#EEEEEE">
+47<@>                <th>Attenuation Up Stream</th>
+21<@>                <td>
+61<@>                    <VWS_SCREEN (char*)xscrnAdslAttenFar[];>
+22<@>                </td>
+18<@>            </tr>
+1<@>
+26<@>   <tr bgcolor="#EEEEEE">
+37<@>                <th>Loop Length</th>
+21<@>                <td>
+69<@>                    <VWS_SCREEN (char*)xscrmAdslStatusLoopLength[];>
+22<@>                </td>
+9<@>   </tr>
+1<@>
+1<@>
+57<@>                <VWS_SCREEN (char*) xscrnShowMaxRate[];>
+1<@>
+17<@>        </table>
+11<@>    </div>
+8<@></body>
+8<@></html>
+1<@>
+1<@>
+24<@>&*#@airtel.html@#*&3166
+122<@><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+44<@><html xmlns="http://www.w3.org/1999/xhtml">
+7<@><head>
+68<@><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+23<@><title>@#$9@#$</title>
+8<@></head>
+32<@><script type="text/javascript">
+5<@><!--
+15<@>var G_lan_mac;
+22<@>var G_CopperLoop = 0;
+12<@>var G_Auth;
+15<@>var G_Psk_Eap;
+17<@>var G_WifiEncap;
+19<@>var G_down_margin;
+17<@>var G_up_margin;
+24<@>var G_down_attenuation;
+22<@>var G_up_attenuation;
+19<@>var G_down_attain;
+17<@>var G_up_attain;
+17<@>var G_down_rate;
+15<@>var G_up_rate;
+1<@>
+44<@><VWS_FUNCTION (void*)getZerotouchValues();>
+20<@>function PageInit()
+2<@>{
+57<@> document.getElementById("lan_mac").innerHTML=G_lan_mac;
+73<@> document.getElementById("adsl_line_CopperLoop").innerHTML=G_CopperLoop;
+61<@> document.getElementById("WifiEncap").innerHTML=G_WifiEncap;
+65<@> document.getElementById("up_snr_margin").innerHTML=G_up_margin;
+69<@> document.getElementById("down_snr_margin").innerHTML=G_down_margin;
+71<@> document.getElementById("up_Attenuation").innerHTML=G_up_attenuation;
+75<@> document.getElementById("down_Attenuation").innerHTML=G_down_attenuation;
+70<@> document.getElementById("up_attainable_rate").innerHTML=G_up_attain;
+74<@> document.getElementById("down_attainable_rate").innerHTML=G_down_attain;
+57<@> document.getElementById("up_rate").innerHTML=G_up_rate;
+61<@> document.getElementById("down_rate").innerHTML=G_down_rate;
+2<@>}
+4<@>-->
+10<@></script>
+7<@><body>
+9<@>  <div >
+49<@> <table class="td_table_s" id='adsl_info_table'>
+7<@>  <tr>
+32<@>   <td id="mac_id">@#$8@#$</td>
+48<@>   <td colspan = "2" id = "lan_mac">&nbsp;</td>
+8<@>  </tr>
+7<@>  <tr>
+36<@>   <td id="CopperLoop">@#$4@#$</td>
+61<@>   <td colspan = "2" id = "adsl_line_CopperLoop">&nbsp;</td>
+8<@>  </tr>
+7<@>  <tr>
+35<@>   <td id="lang_Auth">@#$3@#$</td>
+34<@>   <td id="WifiEncap">&nbsp;</td>
+8<@>  </tr>
+7<@>  <tr>
+19<@>   <td>&nbsp;</td>
+19<@>   <td>&nbsp;</td>
+19<@>   <td>&nbsp;</td>
+8<@>  </tr>
+7<@>  <tr>
+19<@>   <td>&nbsp;</td>
+19<@>   <td>&nbsp;</td>
+19<@>   <td>&nbsp;</td>
+8<@>  </tr>
+7<@>  <tr>
+19<@>   <td>&nbsp;</td>
+36<@>   <td id="@#$6@#$">Downstream</td>
+34<@>   <td id="@#$7@#$">Upstream</td>
+8<@>  </tr>
+7<@>  <tr>
+53<@>   <td class="td_bold" id="SNRMargindB">@#$5@#$</td>
+42<@>   <td id = "down_snr_margin">&nbsp;</td>
+40<@>   <td id = "up_snr_margin">&nbsp;</td>
+8<@>  </tr>
+7<@>  <tr>
+53<@>   <td class="td_bold" id="Attenuation">@#$1@#$</td>
+43<@>   <td id = "down_Attenuation">&nbsp;</td>
+41<@>   <td id = "up_Attenuation">&nbsp;</td>
+8<@>  </tr>
+7<@>  <tr>
+56<@>   <td class="td_bold" id="AttainableRate">@#$0@#$</td>
+47<@>   <td id = "down_attainable_rate">&nbsp;</td>
+45<@>   <td id = "up_attainable_rate">&nbsp;</td>
+8<@>  </tr>
+7<@>  <tr>
+50<@>   <td class="td_bold" id="RateKbps">@#$2@#$</td>
+36<@>   <td id = "down_rate">&nbsp;</td>
+34<@>   <td id = "up_rate">&nbsp;</td>
+8<@>  </tr>
+10<@> </table>
+8<@> </div>
+9<@><script>
+11<@>PageInit()
+10<@></script>
+79<@><form name="uiPostForm" id="uiPostForm" method="post" action="webproc"></form>
+8<@></body>
+8<@></html>
+1<@>
+1<@>
+22<@>&*#@index.htm@#*&1364
+64<@><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+7<@><html>
+7<@><head>
+69<@><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+46<@><META HTTP-EQUIV="pragma" CONTENT="no-cache">
+1<@>
+1<@>
+1<@>
+1<@>
+1<@>
+1<@>
+1<@>
+23<@><title>DSL-224</title>
+1<@>
+1<@>
+1<@>
+54<@><script language="javascript" src="util.js"></script>
+9<@><script>
+1<@>
+1<@>
+24<@>function closeWindow(){
+1<@>
+18<@> var currBrowser;
+31<@> currBrowser = GetBrowserOS();
+1<@>
+21<@> switch(currBrowser)
+3<@> {
+18<@>  case "msiewin":
+18<@>  case "msiemac":
+18<@>  case "netslin":
+26<@>    window.opener = self;
+20<@>    window.close();
+11<@>    break;
+18<@>  case "netswin":
+18<@>  case "firelin":
+18<@>  case "firewin":
+18<@>  case "firemac":
+34<@>    window.open('','_parent','');
+20<@>    window.close();
+11<@>    break;
+11<@>  default:
+26<@>    window.opener = self;
+20<@>    window.close();
+11<@>    break;
+3<@> }
+1<@>
+2<@>}
+1<@>
+1<@>
+17<@>function op() {}
+10<@></script>
+1<@>
+8<@></head>
+13<@><blockquote>
+55<@><frameset rows="0,*" frameborder="0" framespacing="0">
+81<@>  <frame name="fPanel" src="" scrolling="auto" marginwidth="0" marginheight="0">
+41<@>  <frame name="main" src="internet.htm">
+13<@>  <noframes>
+27<@>  <body bgcolor="#008080">
+17<@>  <p>@#$0@#$</p>
+10<@>  </body>
+14<@>  </noframes>
+12<@></frameset>
+14<@></blockquote>
+8<@></html>
+1<@>
+1<@>
+25<@>&*#@attention.htm@#*&310
+40<@><VWS_FUNCTION (void*)SendWebMetaStr();>
+39<@><VWS_FUNCTION (void*)SendWebCssStr();>
+8<@></head>
+8<@><style>
+6<@>body{
+49<@> MARGIN: 1px 0px auto; BACKGROUND-COLOR: #404343
+2<@>}
+9<@></style>
+25<@><body bgcolor="#404343">
+45<@><VWS_FUNCTION (void*)SendWebAttentionStr();>
+8<@></body>
+8<@></html>
+1<@>
+1<@>
+27<@>&*#@realteklogo.htm@#*&238
+40<@><VWS_FUNCTION (void*)SendWebMetaStr();>
+39<@><VWS_FUNCTION (void*)SendWebCssStr();>
+23<@><title>@#$0@#$</title>
+8<@></head>
+7<@><body>
+63<@><img src="realteklogo.gif" width="738" height="60" border="0">
+15<@></BODY></HTML>
+1<@>
+1<@>
+26<@>&*#@menu_empty.htm@#*&126
+13<@><html><body>
+23<@><p>Loading menu...</p>
+45<@><p><a href="menu.htm">No JavaScript?</a></p>
+15<@></body></html>
+1<@>
+1<@>
+20<@>&*#@menu.htm@#*&130
+13<@><html><body>
+77<@><P><font color=red><b>Your browser is not support JavaScript!!<b></font></p>
+15<@></body></html>
+1<@>
+1<@>
+24<@>&*#@mtmcode.js@#*&33609
+66<@>function MTMenuItem(text, url, target, tooltip, icon, openIcon) {
+19<@> this.text = text;
+28<@> this.url = url ? url : "";
+77<@> this.target = target ? target : (MTMDefaultTarget ? MTMDefaultTarget : "");
+25<@> this.tooltip = tooltip;
+31<@> this.icon = icon ? icon : "";
+43<@> this.openIcon = openIcon ? openIcon : "";
+28<@> this.number = MTMNumber++;
+25<@> this.parentNode = null;
+22<@> this.submenu = null;
+24<@> this.expanded = false;
+37<@> this.MTMakeSubmenu = MTMakeSubmenu;
+35<@> this.makeSubmenu = MTMakeSubmenu;
+34<@> this.addSubItem = MTMAddSubItem;
+21<@> MTMLastItem = this;
+2<@>}
+69<@>function MTMakeSubmenu(menu, isExpanded, collapseIcon, expandIcon) {
+22<@> this.submenu = menu;
+29<@> this.expanded = isExpanded;
+77<@> this.collapseIcon = collapseIcon ? collapseIcon : "menu_folder_closed.gif";
+69<@> this.expandIcon = expandIcon ? expandIcon : "menu_folder_open.gif";
+8<@> var i;
+50<@> for(i = 0; i < this.submenu.items.length; i++) {
+43<@>  this.submenu.items[i].parentNode = this;
+39<@>  if(this.submenu.items[i].expanded) {
+25<@>   this.expanded = true;
+4<@>  }
+3<@> }
+2<@>}
+73<@>function MTMakeLastSubmenu(menu, isExpanded, collapseIcon, expandIcon) {
+90<@> this.items[this.items.length-1].makeSubmenu(menu, isExpanded, collapseIcon, expandIcon);
+2<@>}
+31<@>function MTMAddSubItem(item) {
+27<@> if(this.submenu == null){
+69<@>  this.MTMakeSubmenu(new MTMenu(), false, this.icon, this.openIcon);
+3<@> }
+32<@> this.submenu.MTMAddItem(item);
+2<@>}
+20<@>function MTMenu() {
+27<@> this.items = new Array();
+31<@> this.MTMAddItem = MTMAddItem;
+28<@> this.addItem = MTMAddItem;
+43<@> this.makeLastSubmenu = MTMakeLastSubmenu;
+2<@>}
+24<@>function MTMAddItem() {
+64<@> if(arguments[0].toString().indexOf("[object Object]") != -1) {
+48<@>  this.items[this.items.length] = arguments[0];
+10<@> } else {
+120<@>  this.items[this.items.length] = new MTMenuItem(arguments[0], arguments[1], arguments[2], arguments[3], arguments[4]);
+3<@> }
+2<@>}
+22<@>function IconList() {
+27<@> this.items = new Array();
+25<@> this.addIcon = addIcon;
+2<@>}
+25<@>function addIcon(item) {
+39<@> this.items[this.items.length] = item;
+2<@>}
+42<@>function MTMIcon(iconfile, match, type) {
+23<@> this.file = iconfile;
+21<@> this.match = match;
+19<@> this.type = type;
+2<@>}
+29<@>function MTMstyleRuleSet() {
+27<@> this.rules = new Array();
+33<@> this.addRule = MTMaddStyleRule;
+2<@>}
+52<@>function MTMaddStyleRule(thisSelector, thisStyle) {
+76<@> this.rules[this.rules.length] = new MTMstyleRule(thisSelector, thisStyle);
+2<@>}
+49<@>function MTMstyleRule(thisSelector, thisStyle) {
+31<@> this.selector = thisSelector;
+25<@> this.style = thisStyle;
+2<@>}
+24<@>function MTMBrowser() {
+29<@> this.cookieEnabled = false;
+20<@> this.preHREF = "";
+23<@> this.MTMable = false;
+25<@> this.cssEnabled = true;
+29<@> this.browserType = "other";
+25<@> this.majVersion = null;
+22<@> this.DOMable = null;
+24<@> this.menuFrame = null;
+23<@> this.document = null;
+19<@> this.head = null;
+24<@> this.menuTable = null;
+36<@> this.setDocument = MTMsetDocument;
+32<@> this.getFrames = MTMgetFrames;
+40<@> this.appendElement = MTMappendElement;
+34<@> this.resolveURL = MTMresolveURL;
+50<@> if(navigator.userAgent.indexOf("Opera") != -1) {
+37<@>  if(navigator.appName == "Opera") {
+53<@>   this.majVersion = parseInt(navigator.appVersion);
+11<@>  } else {
+102<@>   this.majVersion = parseInt(navigator.userAgent.substring(navigator.userAgent.indexOf("Opera")+6));
+4<@>  }
+29<@>  if(this.majVersion >= 5) {
+24<@>   this.MTMable = true;
+27<@>   this.browserType = "O";
+4<@>  }
+92<@> } else if(navigator.appName == "Netscape" && navigator.userAgent.indexOf("WebTV") == -1) {
+23<@>  this.MTMable = true;
+27<@>  this.browserType = "NN";
+44<@>  if(parseInt(navigator.appVersion) == 3) {
+24<@>   this.majVersion = 3;
+28<@>   this.cssEnabled = false;
+51<@>  } else if(parseInt(navigator.appVersion) >= 4) {
+66<@>   this.majVersion = parseInt(navigator.appVersion) == 4 ? 4 : 5;
+30<@>   if(this.majVersion >= 5) {
+25<@>    this.DOMable = true;
+5<@>   }
+4<@>  }
+104<@> } else if(navigator.appName == "Microsoft Internet Explorer" && parseInt(navigator.appVersion) >= 4) {
+23<@>  this.MTMable = true;
+63<@>  if(navigator.userAgent.toLowerCase().indexOf("mac") != -1) {
+28<@>   this.browserType = "NN";
+24<@>   this.majVersion = 4;
+25<@>   this.DOMable = false;
+11<@>  } else {
+28<@>   this.browserType = "IE";
+130<@>   this.majVersion = navigator.appVersion.indexOf("MSIE 6.") != -1 ? 6 : (navigator.appVersion.indexOf("MSIE 5.") != -1 ? 5 : 4);
+30<@>   if(this.majVersion >= 5) {
+25<@>    this.DOMable = true;
+5<@>   }
+4<@>  }
+3<@> }
+78<@> this.preHREF = location.href.substring(0, location.href.lastIndexOf("/") +1)
+2<@>}
+37<@>function MTMsetDocument(menuFrame) {
+29<@> this.menuFrame = menuFrame;
+37<@> this.document = menuFrame.document;
+20<@> if(this.DOMable) {
+129<@>  this.head = this.browserType == "IE" ? this.document.all.tags('head')[0] : this.document.getElementsByTagName('head').item(0);
+3<@> }
+2<@>}
+45<@>function MTMresolveURL(thisURL, testLocal) {
+140<@> var absoluteArray = new Array("http://", "https://", "mailto:", "ftp://", "telnet:", "news:", "gopher:", "nntp:", "javascript:", "file:");
+25<@> var tempString = "", i;
+45<@> for(i = 0; i < absoluteArray.length; i++) {
+47<@>  if(thisURL.indexOf(absoluteArray[i]) == 0) {
+25<@>   tempString = thisURL;
+10<@>   break;
+4<@>  }
+3<@> }
+17<@> if(testLocal) {
+43<@>  return(tempString == "" ? true : false);
+3<@> }
+19<@> if(!tempString) {
+34<@>  if(thisURL.indexOf("/") == 0) {
+72<@>   tempString = location.protocol + "//" + location.hostname + thisURL;
+43<@>  } else if(thisURL.indexOf("../") == 0) {
+30<@>   tempString = this.preHREF;
+8<@>   do {
+33<@>    thisURL = thisURL.substr(3);
+92<@>    tempString = tempString.substr(0, tempString.lastIndexOf("/", tempString.length-2) +1);
+41<@>   } while(thisURL.indexOf("../") == 0);
+26<@>   tempString += thisURL;
+11<@>  } else {
+40<@>   tempString = this.preHREF + thisURL;
+4<@>  }
+3<@> }
+21<@> return(tempString);
+2<@>}
+173<@>var MTMLinkedJSURL, MTMLinkedSS, MTMSSHREF, MTMLinkedInitFunction, MTMDOCTYPE, MTMcontentType, MTMHeader, MTMFooter, MTMrightClickMessage, MTMDefaultTarget, MTMTimeOut = 5;
+226<@>var MTMuseScrollbarCSS, MTMscrollbarBaseColor, MTMscrollbarFaceColor, MTMscrollbarHighlightColor, MTMscrollbarShadowColor, MTMscrollbar3dLightColor, MTMscrollbarArrowColor, MTMscrollbarTrackColor, MTMscrollbarDarkShadowColor;
+71<@>var MTMUseCookies, MTMCookieName, MTMCookieDays, MTMTrackedCookieName;
+100<@>var MTMCodeFrame = "code", MTMenuFrame = "menu", MTMTableWidth = "100%", MTMenuImageDirectory = "";
+113<@>var MTMUseToolTips = true, MTMEmulateWE, MTMAlwaysLinkIfWE = true, MTMSubsGetPlus = "Submenu", MTMSubsAutoClose;
+246<@>var MTMBackground = "", MTMBGColor = "#000000", MTMTextColor = "#FFFFFF", MTMLinkColor = "#FFFFFF", MTMTrackColor = "#000000", MTMAhoverColor = "#FF0000", MTMSubExpandColor = "#0000FF", MTMSubClosedColor = "#666699", MTMSubTextColor = "#FFFFFF";
+92<@>var MTMenuText = "Site contents:", MTMRootIcon = "menu_root.gif", MTMRootColor = "#FFFFFF";
+69<@>var MTMRootFont = MTMenuFont = "Arial, Helvetica, sans-serif, bold";
+43<@>var MTMRootCSSize = MTMenuCSSize = "100%";
+26<@>var MTMenuCSSize = "84%";
+27<@>var MTMRootFontSize = "2";
+26<@>var MTMenuFontSize = "1";
+23<@>var MTMLoaded = false;
+14<@>var MTMLevel;
+26<@>var MTMBar = new Array();
+30<@>var MTMIndices = new Array();
+30<@>var MTMUA = new MTMBrowser();
+41<@>var MTMExtraCSS = new MTMstyleRuleSet();
+19<@>var MTMstyleRules;
+17<@>var MTMLastItem;
+28<@>var MTMClickedItem = false;
+26<@>var MTMExpansion = false;
+19<@>var MTMNumber = 1;
+20<@>var MTMTrackedItem;
+22<@>var MTMTrack = false;
+19<@>var MTMFrameNames;
+24<@>var MTMFirstRun = true;
+24<@>var MTMCurrentTime = 0;
+25<@>var MTMUpdating = false;
+34<@>var MTMWinSize, MTMyval, MTMxval;
+26<@>var MTMOutputString = "";
+26<@>var MTMCookieString = "";
+26<@>var MTMCookieCharNum = 0;
+34<@>var MTMTCArray, MTMTrackedCookie;
+26<@>function MTMgetFrames() {
+20<@> if(this.MTMable) {
+31<@>  MTMFrameNames = new Array();
+46<@>  for(i = 0; i < parent.frames.length; i++) {
+45<@>   MTMFrameNames[i] = parent.frames[i].name;
+46<@>   if(parent.frames[i].name == MTMenuFrame) {
+40<@>    this.setDocument(parent.frames[i]);
+5<@>   }
+4<@>  }
+3<@> }
+2<@>}
+33<@>function MTMSubAction(SubItem) {
+55<@> SubItem.expanded = (SubItem.expanded) ? false : true;
+24<@> if(SubItem.expanded) {
+23<@>  MTMExpansion = true;
+3<@> }
+27<@> MTMClickedItem = SubItem;
+58<@> if(MTMTrackedItem && MTMTrackedItem != SubItem.number) {
+26<@>  MTMTrackedItem = false;
+3<@> }
+62<@> if(MTMEmulateWE || SubItem.url == "" || !SubItem.expanded) {
+38<@>  setTimeout("MTMDisplayMenu()", 10);
+16<@>  return false;
+10<@> } else {
+156<@>  if(SubItem.target == "_blank" || !MTMUA.resolveURL(SubItem.url, true) || (SubItem.target.indexOf("_") != 0 && MTMTrackTarget(SubItem.target) == false)) {
+39<@>   setTimeout("MTMDisplayMenu()", 10);
+4<@>  }
+15<@>  return true;
+3<@> }
+2<@>}
+35<@>function MTMStartMenu(thisEvent) {
+57<@> if(MTMUA.browserType == "O" && MTMUA.majVersion == 5) {
+32<@>  parent.onload = MTMStartMenu;
+18<@>  if(thisEvent) {
+11<@>   return;
+4<@>  }
+3<@> }
+19<@> MTMLoaded = true;
+19<@> if(MTMFirstRun) {
+39<@>  if(MTMCurrentTime++ == MTMTimeOut) {
+38<@>   setTimeout("MTMDisplayMenu()",10);
+11<@>  } else {
+37<@>   setTimeout("MTMStartMenu()",100);
+4<@>  }
+3<@> }
+2<@>}
+28<@>function MTMDisplayMenu() {
+37<@> if(MTMUA.MTMable && !MTMUpdating) {
+22<@>  MTMUpdating = true;
+16<@>  MTMLevel = 0;
+20<@>  if(MTMFirstRun) {
+22<@>   MTMUA.getFrames();
+23<@>   if(MTMUseCookies) {
+23<@>    MTMFetchCookies();
+27<@>    if(MTMTrackedCookie) {
+48<@>     MTMTCArray = MTMTrackedCookie.split("::");
+37<@>     MTMTrackedItem = MTMTCArray[0];
+40<@>     if(parent.frames[MTMTCArray[1]]) {
+61<@>      parent.frames[MTMTCArray[1]].location = MTMTCArray[2];
+7<@>     }
+24<@>     MTMTCArray = null;
+6<@>    }
+5<@>   }
+4<@>  }
+58<@>  if(MTMTrack) { MTMTrackedItem = MTMTrackExpand(menu); }
+63<@>  if(MTMExpansion && MTMSubsAutoClose) { MTMCloseSubs(menu); }
+22<@>  if(MTMUA.DOMable) {
+21<@>   if(MTMFirstRun) {
+32<@>    MTMinitializeDOMDocument();
+5<@>   }
+56<@>  } else if(MTMFirstRun || MTMUA.browserType != "IE") {
+48<@>   MTMUA.document.open("text/html", "replace");
+81<@>   MTMOutputString = (MTMDOCTYPE ? (MTMDOCTYPE + "\n") : '') + "<html><head>\n";
+24<@>   if(MTMcontentType) {
+94<@>    MTMOutputString += '<meta http-equiv="Content-Type" content="' + MTMcontentType + '">\n';
+5<@>   }
+21<@>   if(MTMLinkedSS) {
+109<@>    MTMOutputString += '<link rel="stylesheet" type="text/css" href="' + MTMUA.preHREF + MTMSSHREF + '">\n';
+12<@>   } else {
+45<@>    MTMUA.document.writeln(MTMOutputString);
+26<@>    MTMOutputString = "";
+27<@>    MTMcreateStyleSheet();
+5<@>   }
+59<@>   if(MTMUA.browserType == "IE" && MTMrightClickMessage) {
+266<@>    MTMOutputString += '<scr' + 'ipt type="text/javascript">\nfunction MTMcatchRight() {\nif(event && (event.button == 2 || event.button == 3)) {\nalert("' + MTMrightClickMessage + '");\nreturn false;\n}\nreturn true;\n}\n\ndocument.onmousedown = MTMcatchRight;\n';
+44<@>    MTMOutputString += '<\/scr' + 'ipt>\n';
+5<@>   }
+41<@>   MTMOutputString += '</head>\n<body ';
+29<@>   if(MTMBackground != "") {
+101<@>    MTMOutputString += 'background="' + MTMUA.preHREF + MTMenuImageDirectory + MTMBackground + '" ';
+5<@>   }
+171<@>   MTMOutputString += 'bgcolor="' + MTMBGColor + '" text="' + MTMTextColor + '" link="' + MTMLinkColor + '" vlink="' + MTMLinkColor + '" alink="' + MTMLinkColor + '">\n';
+178<@>   MTMUA.document.writeln(MTMOutputString + (MTMHeader ? MTMHeader : "") + '\n<table border="0" cellpadding="0" cellspacing="0" width="' + MTMTableWidth + '" id="mtmtable">\n');
+4<@>  }
+69<@>  if(!MTMFirstRun && (MTMUA.DOMable || MTMUA.browserType == "IE")) {
+26<@>   if(!MTMUA.menuTable) {
+54<@>    MTMUA.menuTable = MTMUA.document.all('mtmtable');
+5<@>   }
+44<@>   while(MTMUA.menuTable.rows.length > 1) {
+34<@>    MTMUA.menuTable.deleteRow(1);
+5<@>   }
+4<@>  }
+140<@>  MTMOutputString = '<img src="' + MTMUA.preHREF + MTMenuImageDirectory + MTMRootIcon + '" align="left" border="0" vspace="0" hspace="0">';
+25<@>  if(MTMUA.cssEnabled) {
+73<@>   MTMOutputString += '<span id="root">&nbsp;' + MTMenuText + '</span>';
+11<@>  } else {
+144<@>   MTMOutputString += '<font size="' + MTMRootFontSize + '" face="' + MTMRootFont + '" color="' + MTMRootColor + '">' + MTMenuText + '</font>';
+4<@>  }
+69<@>  if(MTMFirstRun || (!MTMUA.DOMable && MTMUA.browserType != "IE")) {
+32<@>   MTMAddCell(MTMOutputString);
+4<@>  }
+22<@>  MTMListItems(menu);
+69<@>  if(!MTMUA.DOMable && (MTMFirstRun || MTMUA.browserType != "IE")) {
+79<@>   MTMUA.document.writeln('</table>\n' + (MTMFooter ? MTMFooter : "") + '\n');
+53<@>   if(MTMLinkedJSURL && MTMUA.browserType != "IE") {
+133<@>    MTMUA.document.writeln('<scr' + 'ipt defer type="text/javascript" src="' + MTMUA.preHREF + MTMLinkedJSURL + '"></scr' + 'ipt>');
+5<@>   }
+49<@>   MTMUA.document.writeln('\n</body>\n</html>');
+27<@>   MTMUA.document.close();
+4<@>  }
+100<@>  if((MTMClickedItem || MTMTrackedItem) && !(MTMUA.browserType == "NN" && MTMUA.majVersion == 3)) {
+84<@>   MTMItemName = "sub" + (MTMClickedItem ? MTMClickedItem.number : MTMTrackedItem);
+55<@>   if(document.layers && MTMUA.menuFrame.scrollbars) {
+11<@>    var i;
+57<@>    for(i = 0; i < MTMUA.document.anchors.length; i++) {
+55<@>     if(MTMUA.document.links[i].name == MTMItemName) {
+43<@>      MTMyval = MTMUA.document.links[i].y;
+39<@>      MTMUA.document.links[i].focus();
+13<@>      break;
+7<@>     }
+6<@>    }
+46<@>    MTMWinSize = MTMUA.menuFrame.innerHeight;
+41<@>   } else if(MTMUA.browserType != "O") {
+61<@>    if(MTMUA.browserType == "NN" && MTMUA.majVersion == 5) {
+68<@>     MTMUA.document.all = MTMUA.document.getElementsByTagName("*");
+6<@>    }
+59<@>    MTMyval = MTMGetYPos(MTMUA.document.all[MTMItemName]);
+45<@>    MTMUA.document.all[MTMItemName].focus();
+109<@>    MTMWinSize = MTMUA.browserType == "IE" ? MTMUA.document.body.offsetHeight : MTMUA.menuFrame.innerHeight;
+5<@>   }
+37<@>   if(MTMyval > (MTMWinSize - 60)) {
+73<@>    MTMUA.menuFrame.scrollTo(0, parseInt(MTMyval - (MTMWinSize * 1/3)));
+5<@>   }
+4<@>  }
+44<@>  if(!MTMFirstRun && MTMUA.cookieEnabled) {
+31<@>   if(MTMCookieString != "") {
+80<@>    setCookie(MTMCookieName, MTMCookieString.substring(0,4000), MTMCookieDays);
+31<@>    if(MTMTrackedCookieName) {
+22<@>     if(MTMTCArray) {
+77<@>      setCookie(MTMTrackedCookieName, MTMTCArray.join("::"), MTMCookieDays);
+14<@>     } else {
+47<@>      setCookie(MTMTrackedCookieName, "", -1);
+7<@>     }
+6<@>    }
+12<@>   } else {
+38<@>    setCookie(MTMCookieName, "", -1);
+5<@>   }
+4<@>  }
+105<@>  if(MTMLinkedJSURL && MTMLinkedInitFunction && !(MTMUA.browserType == "IE" && MTMUA.majVersion == 4)) {
+70<@>   setTimeout('MTMUA.menuFrame.' + MTMLinkedInitFunction + '()', 10);
+4<@>  }
+23<@>  MTMFirstRun = false;
+26<@>  MTMClickedItem = false;
+24<@>  MTMExpansion = false;
+20<@>  MTMTrack = false;
+24<@>  MTMCookieString = "";
+3<@> }
+21<@>MTMUpdating = false;
+2<@>}
+38<@>function MTMinitializeDOMDocument() {
+17<@> var newElement;
+22<@> if(MTMcontentType) {
+95<@>  MTMUA.appendElement('head', 'meta', 'httpEquiv', 'Content-Type', 'content', MTMcontentType);
+3<@> }
+26<@> MTMdisableStyleSheets();
+19<@> if(MTMLinkedSS) {
+117<@>  MTMUA.appendElement('head', 'link', 'rel', 'stylesheet', 'type', 'text/css', 'href', (MTMUA.preHREF + MTMSSHREF));
+10<@> } else {
+25<@>  MTMcreateStyleSheet();
+3<@> }
+22<@> if(MTMLinkedJSURL) {
+124<@>  MTMUA.appendElement('head', 'script', 'src', (MTMUA.preHREF + MTMLinkedJSURL), 'type', 'text/javascript', 'defer', true);
+3<@> }
+52<@> while(MTMUA.document.body.childNodes.length > 0) {
+67<@>  MTMUA.document.body.removeChild(MTMUA.document.body.firstChild);
+3<@> }
+17<@> if(MTMHeader) {
+34<@>  if(MTMUA.browserType == "IE") {
+68<@>   MTMUA.document.body.insertAdjacentHTML("afterBegin", MTMHeader);
+11<@>  } else {
+47<@>   var myRange = MTMUA.document.createRange();
+45<@>   myRange.setStart(MTMUA.document.body, 0);
+65<@>   var parsedHTML = myRange.createContextualFragment(MTMHeader);
+48<@>   MTMUA.document.body.appendChild(parsedHTML);
+4<@>  }
+3<@> }
+136<@> MTMUA.appendElement('body', 'table', 'border', '0', 'cellPadding', '0', 'cellSpacing', '0', 'width', MTMTableWidth, 'id', 'mtmtable');
+62<@> MTMUA.menuTable = MTMUA.document.getElementById('mtmtable');
+17<@> if(MTMFooter) {
+34<@>  if(MTMUA.browserType == "IE") {
+67<@>   MTMUA.document.body.insertAdjacentHTML("beforeEnd", MTMFooter);
+11<@>  } else {
+47<@>   var myRange = MTMUA.document.createRange();
+45<@>   myRange.setStart(MTMUA.document.body, 0);
+65<@>   var parsedHTML = myRange.createContextualFragment(MTMFooter);
+48<@>   MTMUA.document.body.appendChild(parsedHTML);
+4<@>  }
+3<@> }
+2<@>}
+30<@>function MTMappendElement() {
+61<@> var newElement = this.document.createElement(arguments[1]);
+21<@> var j, newProperty;
+42<@> for(j = 2; j < arguments.length; j+=2) {
+57<@>  newElement.setAttribute(arguments[j], arguments[j+1]);
+3<@> }
+30<@> if(arguments[0] == 'head') {
+37<@>  this.head.appendChild(newElement);
+37<@> } else if(arguments[0] == 'body') {
+46<@>  this.document.body.appendChild(newElement);
+3<@> }
+2<@>}
+30<@>function MTMListItems(menu) {
+16<@> var i, isLast;
+43<@> for (i = 0; i < menu.items.length; i++) {
+28<@>  MTMIndices[MTMLevel] = i;
+40<@>  isLast = (i == menu.items.length -1);
+41<@>  MTMDisplayItem(menu.items[i], isLast);
+56<@>  if(menu.items[i].submenu && menu.items[i].expanded) {
+47<@>   MTMBar[MTMLevel] = (isLast) ? false : true;
+15<@>   MTMLevel++;
+40<@>   MTMListItems(menu.items[i].submenu);
+15<@>   MTMLevel--;
+11<@>  } else {
+29<@>   MTMBar[MTMLevel] = false;
+4<@>  }
+3<@> }
+2<@>}
+38<@>function MTMDisplayItem(item, last) {
+24<@> var i, img, subNoLink;
+55<@> var MTMfrm = "parent.frames['" + MTMCodeFrame + "']";
+52<@> var MTMref = '.menu.items[' + MTMIndices[0] + ']';
+20<@> if(MTMLevel > 0) {
+35<@>  for(i = 1; i <= MTMLevel; i++) {
+54<@>   MTMref += ".submenu.items[" + MTMIndices[i] + "]";
+4<@>  }
+3<@> }
+27<@> if(MTMUA.cookieEnabled) {
+45<@>  if(MTMFirstRun && MTMCookieString != "") {
+87<@>   item.expanded = (MTMCookieString.charAt(MTMCookieCharNum++) == "1") ? true : false;
+11<@>  } else {
+51<@>   MTMCookieString += (item.expanded) ? "1" : "0";
+4<@>  }
+3<@> }
+20<@> if(item.submenu) {
+28<@>  var usePlusMinus = false;
+65<@>  if(MTMSubsGetPlus.toLowerCase() == "always" || MTMEmulateWE) {
+24<@>   usePlusMinus = true;
+57<@>  } else if(MTMSubsGetPlus.toLowerCase() == "submenu") {
+52<@>   for(i = 0; i < item.submenu.items.length; i++) {
+40<@>    if(item.submenu.items[i].submenu) {
+33<@>     usePlusMinus = true; break;
+6<@>    }
+5<@>   }
+4<@>  }
+84<@>  var MTMClickCmd = "return " + MTMfrm + ".MTMSubAction(" + MTMfrm + MTMref + ");";
+179<@>  var MTMouseOverCmd = "parent.status='" + (item.expanded ? "Collapse " : "Expand ") + (item.text.indexOf("'") != -1 ? MTMEscapeQuotes(item.text) : item.text) + "';return true;";
+73<@>  var MTMouseOutCmd = "parent.status=parent.defaultStatus;return true;";
+3<@> }
+23<@> MTMOutputString = "";
+20<@> if(MTMLevel > 0) {
+35<@>  for (i = 0; i < MTMLevel; i++) {
+97<@>   MTMOutputString += (MTMBar[i]) ? MTMakeImage("menu_bar.gif") : MTMakeImage("menu_pixel.gif");
+4<@>  }
+3<@> }
+36<@> if(item.submenu && usePlusMinus) {
+23<@>  if(item.url == "") {
+102<@>   MTMOutputString += MTMakeLink(item, true, true, true, MTMClickCmd, MTMouseOverCmd, MTMouseOutCmd);
+11<@>  } else {
+22<@>   if(MTMEmulateWE) {
+104<@>    MTMOutputString += MTMakeLink(item, true, true, false, MTMClickCmd, MTMouseOverCmd, MTMouseOutCmd);
+12<@>   } else {
+25<@>    if(!item.expanded) {
+74<@>     MTMOutputString += MTMakeLink(item, false, true, true, MTMClickCmd);
+13<@>    } else {
+105<@>     MTMOutputString += MTMakeLink(item, true, true, false, MTMClickCmd, MTMouseOverCmd, MTMouseOutCmd);
+6<@>    }
+5<@>   }
+4<@>  }
+22<@>  if(item.expanded) {
+66<@>   img = (last) ? "menu_corner_minus.gif" : "menu_tee_minus.gif";
+11<@>  } else {
+64<@>   img = (last) ? "menu_corner_plus.gif" : "menu_tee_plus.gif";
+4<@>  }
+10<@> } else {
+53<@>  img = (last) ? "menu_corner.gif" : "menu_tee.gif";
+3<@> }
+38<@> MTMOutputString += MTMakeImage(img);
+20<@> if(item.submenu) {
+21<@>  if(MTMEmulateWE) {
+24<@>   if(item.url != "") {
+70<@>    MTMOutputString += '</a>' + MTMakeLink(item, false, false, true);
+35<@>   } else if(!MTMAlwaysLinkIfWE) {
+22<@>    subNoLink = true;
+53<@>    MTMOutputString += '</a><span class="subtext">';
+5<@>   }
+29<@>  } else if(!usePlusMinus) {
+24<@>   if(item.url == "") {
+103<@>    MTMOutputString += MTMakeLink(item, true, true, true, MTMClickCmd, MTMouseOverCmd, MTMouseOutCmd);
+31<@>   } else if(!item.expanded) {
+73<@>    MTMOutputString += MTMakeLink(item, false, true, true, MTMClickCmd);
+12<@>   } else {
+104<@>    MTMOutputString += MTMakeLink(item, true, true, false, MTMClickCmd, MTMouseOverCmd, MTMouseOutCmd);
+5<@>   }
+4<@>  }
+63<@>  img = (item.expanded) ? item.expandIcon : item.collapseIcon;
+10<@> } else {
+58<@>  MTMOutputString += MTMakeLink(item, false, true, true);
+64<@>  img = (item.icon != "") ? item.icon : MTMFetchIcon(item.url);
+3<@> }
+38<@> MTMOutputString += MTMakeImage(img);
+72<@> if(item.submenu && item.url != "" && item.expanded && !MTMEmulateWE) {
+68<@>  MTMOutputString += '</a>' + MTMakeLink(item, false, false, true);
+3<@> }
+74<@> if(MTMUA.browserType == "NN" && MTMUA.majVersion == 3 && !MTMLinkedSS) {
+19<@>  var stringColor;
+83<@>  if(item.submenu && (item.url == "") && (item.number == MTMClickedItem.number)) {
+74<@>   stringColor = (item.expanded) ? MTMSubExpandColor : MTMSubClosedColor;
+63<@>  } else if(MTMTrackedItem && MTMTrackedItem == item.number) {
+32<@>   stringColor = MTMTrackColor;
+11<@>  } else {
+31<@>   stringColor = MTMLinkColor;
+4<@>  }
+115<@>  MTMOutputString += '<font color="' + stringColor + '" size="' + MTMenuFontSize + '" face="' + MTMenuFont + '">';
+3<@> }
+132<@> MTMOutputString += '&nbsp;' + item.text + ((MTMUA.browserType == "NN" && MTMUA.majVersion == 3 && !MTMLinkedSS) ? '</font>' : '');
+52<@> MTMOutputString += subNoLink ? '</span>' : '</a>';
+30<@> MTMAddCell(MTMOutputString);
+2<@>}
+37<@>function MTMEscapeQuotes(myString) {
+21<@> var newString = "";
+38<@> var cur_pos = myString.indexOf("'");
+19<@> var prev_pos = 0;
+25<@> while (cur_pos != -1) {
+21<@>  if(cur_pos == 0) {
+22<@>   newString += "\\";
+50<@>  } else if(myString.charAt(cur_pos-1) != "\\") {
+62<@>   newString += myString.substring(prev_pos, cur_pos) + "\\";
+50<@>  } else if(myString.charAt(cur_pos-1) == "\\") {
+55<@>   newString += myString.substring(prev_pos, cur_pos);
+4<@>  }
+24<@>  prev_pos = cur_pos++;
+44<@>  cur_pos = myString.indexOf("'", cur_pos);
+3<@> }
+68<@> return(newString + myString.substring(prev_pos, myString.length));
+2<@>}
+36<@>function MTMTrackExpand(thisMenu) {
+36<@> var i, targetPath, targetLocation;
+26<@> var foundNumber = false;
+46<@> for(i = 0; i < thisMenu.items.length; i++) {
+80<@>  if(thisMenu.items[i].url != "" && MTMTrackTarget(thisMenu.items[i].target)) {
+70<@>   targetLocation = parent.frames[thisMenu.items[i].target].location;
+37<@>   targetHREF = targetLocation.href;
+39<@>   if(targetHREF.indexOf("#") != -1) {
+64<@>    targetHREF = targetHREF.substr(0, targetHREF.indexOf("#"));
+5<@>   }
+73<@>   if(MTMUA.browserType == "IE" && targetLocation.protocol == "file:") {
+24<@>    var regExp = /\\/g;
+51<@>    targetHREF = targetHREF.replace(regExp, "\/");
+5<@>   }
+63<@>   if(targetHREF == MTMUA.resolveURL(thisMenu.items[i].url)) {
+38<@>    return(thisMenu.items[i].number);
+5<@>   }
+4<@>  }
+34<@>  if(thisMenu.items[i].submenu) {
+60<@>   foundNumber = MTMTrackExpand(thisMenu.items[i].submenu);
+21<@>   if(foundNumber) {
+38<@>    if(!thisMenu.items[i].expanded) {
+40<@>     thisMenu.items[i].expanded = true;
+65<@>     if(!MTMClickedItem) { MTMClickedItem = thisMenu.items[i]; }
+26<@>     MTMExpansion = true;
+6<@>    }
+25<@>    return(foundNumber);
+5<@>   }
+4<@>  }
+3<@> }
+21<@>return(foundNumber);
+2<@>}
+34<@>function MTMCloseSubs(thisMenu) {
+11<@> var i, j;
+25<@> var foundMatch = false;
+46<@> for(i = 0; i < thisMenu.items.length; i++) {
+64<@>  if(thisMenu.items[i].submenu && thisMenu.items[i].expanded) {
+59<@>   if(thisMenu.items[i].number == MTMClickedItem.number) {
+23<@>    foundMatch = true;
+66<@>    for(j = 0; j < thisMenu.items[i].submenu.items.length; j++) {
+55<@>     if(thisMenu.items[i].submenu.items[j].expanded) {
+59<@>      thisMenu.items[i].submenu.items[j].expanded = false;
+7<@>     }
+6<@>    }
+12<@>   } else {
+21<@>    if(foundMatch) {
+41<@>     thisMenu.items[i].expanded = false;
+13<@>    } else {
+59<@>     foundMatch = MTMCloseSubs(thisMenu.items[i].submenu);
+23<@>     if(!foundMatch) {
+42<@>      thisMenu.items[i].expanded = false;
+7<@>     }
+6<@>    }
+5<@>   }
+4<@>  }
+3<@> }
+21<@> return(foundMatch);
+2<@>}
+36<@>function MTMFetchIcon(testString) {
+8<@> var i;
+49<@> for(i = 0; i < MTMIconList.items.length; i++) {
+103<@>  if((MTMIconList.items[i].type == 'any') && (testString.indexOf(MTMIconList.items[i].match) != -1)) {
+38<@>   return(MTMIconList.items[i].file);
+109<@>  } else if((MTMIconList.items[i].type == 'pre') && (testString.indexOf(MTMIconList.items[i].match) == 0)) {
+38<@>   return(MTMIconList.items[i].file);
+111<@>  } else if((MTMIconList.items[i].type == 'post') && (testString.indexOf(MTMIconList.items[i].match) != -1)) {
+119<@>   if((testString.lastIndexOf(MTMIconList.items[i].match) + MTMIconList.items[i].match.length) == testString.length) {
+39<@>    return(MTMIconList.items[i].file);
+5<@>   }
+4<@>  }
+3<@> }
+34<@> return("menu_link_default.gif");
+2<@>}
+29<@>function MTMGetYPos(myObj) {
+88<@> return(myObj.offsetTop + ((myObj.offsetParent) ? MTMGetYPos(myObj.offsetParent) : 0));
+2<@>}
+103<@>function MTMakeLink(thisItem, voidURL, addName, addTitle, clickEvent, mouseOverEvent, mouseOutEvent) {
+100<@> var tempString = '<a href="' + (voidURL ? 'javascript:;' : MTMUA.resolveURL(thisItem.url)) + '" ';
+54<@> if(MTMUseToolTips && addTitle && thisItem.tooltip) {
+53<@>  tempString += 'title="' + thisItem.tooltip + '" ';
+3<@> }
+15<@> if(addName) {
+54<@>  tempString += 'name="sub' + thisItem.number + '" ';
+3<@> }
+18<@> if(clickEvent) {
+49<@>  tempString += 'onclick="' + clickEvent + '" ';
+3<@> }
+46<@> if(mouseOverEvent && mouseOverEvent != "") {
+57<@>  tempString += 'onmouseover="' + mouseOverEvent + '" ';
+3<@> }
+44<@> if(mouseOutEvent && mouseOutEvent != "") {
+55<@>  tempString += 'onmouseout="' + mouseOutEvent + '" ';
+3<@> }
+86<@> if(thisItem.submenu && MTMClickedItem && thisItem.number == MTMClickedItem.number) {
+86<@>  tempString += 'class="' + (thisItem.expanded ? "subexpanded" : "subclosed") + '" ';
+66<@> } else if(MTMTrackedItem && thisItem.number == MTMTrackedItem) {
+29<@>  if(MTMTrackedCookieName) {
+75<@>   MTMTCArray = new Array(thisItem.number, thisItem.target, thisItem.url);
+4<@>  }
+35<@>  tempString += 'class="tracked"';
+3<@> }
+29<@> if(thisItem.target != "") {
+53<@>  tempString += 'target="' + thisItem.target + '" ';
+3<@> }
+27<@> return(tempString + '>');
+2<@>}
+34<@>function MTMakeImage(thisImage) {
+150<@> return('<img src="' + MTMUA.preHREF + MTMenuImageDirectory + thisImage + '" align="left" border="0" vspace="0" hspace="0" width="18" height="18">');
+2<@>}
+32<@>function MTMakeSVG(thisImage) {
+113<@> return('<object type="image/svg+xml" data="' + thisImage + '" NAME="Main" width="18" height="18" ><\/object>');
+2<@>}
+38<@>function MTMTrackTarget(thisTarget) {
+35<@> if(thisTarget.charAt(0) == "_") {
+16<@>  return false;
+10<@> } else {
+46<@>  for(i = 0; i < MTMFrameNames.length; i++) {
+40<@>   if(thisTarget == MTMFrameNames[i]) {
+17<@>    return true;
+5<@>   }
+4<@>  }
+3<@> }
+15<@> return false;
+2<@>}
+32<@>function MTMAddCell(thisHTML) {
+68<@> if(MTMUA.DOMable || (MTMUA.browserType == "IE" && !MTMFirstRun)) {
+70<@>  var myRow = MTMUA.menuTable.insertRow(MTMUA.menuTable.rows.length);
+24<@>  myRow.vAlign = "top";
+53<@>  var myCell = myRow.insertCell(myRow.cells.length);
+24<@>  myCell.noWrap = true;
+31<@>  myCell.innerHTML = thisHTML;
+10<@> } else {
+86<@>  MTMUA.document.writeln('<tr valign="top"><td nowrap>' + thisHTML + '<\/td><\/tr>');
+3<@> }
+2<@>}
+33<@>function MTMcreateStyleSheet() {
+8<@> var i;
+22<@> if(!MTMstyleRules) {
+41<@>  MTMstyleRules = new MTMstyleRuleSet();
+24<@>  with(MTMstyleRules) {
+51<@>   addRule('body', 'color:' + MTMTextColor + ';');
+57<@>   if(MTMuseScrollbarCSS && MTMUA.browserType != "NN") {
+469<@>    addRule('body', 'scrollbar-3dlight-color:' + MTMscrollbar3dLightColor + ';scrollbar-arrow-color:' + MTMscrollbarArrowColor + ';scrollbar-base-color:' + MTMscrollbarBaseColor + ';scrollbar-darkshadow-color:' + MTMscrollbarDarkShadowColor + ';scrollbar-face-color:' + MTMscrollbarFaceColor + ';scrollbar-highlight-color:' + MTMscrollbarHighlightColor + ';scrollbar-shadow-color:' + MTMscrollbarShadowColor + ';scrollbar-track-color:' + MTMscrollbarTrackColor + ';');
+5<@>   }
+139<@>   addRule('#root', 'color:' + MTMRootColor + ';background:transparent;font-family:' + MTMRootFont + ';font-size:' + MTMRootCSSize + ';');
+144<@>   addRule('.subtext', 'font-family:' + MTMenuFont + ';font-size:' + MTMenuCSSize + ';color:' + MTMSubTextColor + ';background: transparent;');
+154<@>   addRule('a', 'font-family:' + MTMenuFont + ';font-size:' + MTMenuCSSize + ';text-decoration:none;color:' + MTMLinkColor + ';background:transparent;');
+79<@>   addRule('a:hover', 'color:' + MTMAhoverColor + ';background:transparent;');
+80<@>   addRule('a.tracked', 'color:' + MTMTrackColor + ';background:transparent;');
+88<@>   addRule('a.subexpanded', 'color:' + MTMSubExpandColor + ';background:transparent;');
+86<@>   addRule('a.subclosed', 'color:' + MTMSubClosedColor + ';background:transparent;');
+4<@>  }
+3<@> }
+21<@> if(MTMUA.DOMable) {
+34<@>  if(MTMUA.browserType == "IE") {
+38<@>   MTMUA.document.createStyleSheet();
+88<@>   var newStyleSheet = MTMUA.document.styleSheets(MTMUA.document.styleSheets.length-1);
+41<@>  } else if(MTMUA.browserType == "NN") {
+66<@>   var newStyleSheet = MTMUA.document.getElementById('mtmsheet');
+23<@>   if(newStyleSheet) {
+36<@>    newStyleSheet.disabled = false;
+5<@>   }
+4<@>  }
+10<@> } else {
+48<@>  var outputHTML = '<style type="text/css">\n';
+3<@> }
+51<@> for(i = 0; i < MTMstyleRules.rules.length; i++) {
+51<@>  if(MTMUA.DOMable && MTMUA.browserType == "IE") {
+89<@>   newStyleSheet.addRule(MTMstyleRules.rules[i].selector, MTMstyleRules.rules[i].style);
+75<@>  } else if(MTMUA.DOMable && MTMUA.browserType == "NN" && newStyleSheet) {
+154<@>   newStyleSheet.sheet.insertRule((MTMstyleRules.rules[i].selector + " { " + MTMstyleRules.rules[i].style + " } "), newStyleSheet.sheet.cssRules.length);
+11<@>  } else {
+100<@>   outputHTML += MTMstyleRules.rules[i].selector + ' {\n' + MTMstyleRules.rules[i].style + '\n}\n';
+4<@>  }
+3<@> }
+49<@> for(i = 0; i < MTMExtraCSS.rules.length; i++) {
+51<@>  if(MTMUA.DOMable && MTMUA.browserType == "IE") {
+85<@>   newStyleSheet.addRule(MTMExtraCSS.rules[i].selector, MTMExtraCSS.rules[i].style);
+75<@>  } else if(MTMUA.DOMable && MTMUA.browserType == "NN" && newStyleSheet) {
+146<@>   newStyleSheet.sheet.insertRule((MTMExtraCSS.rules[i].selector + "{" + MTMExtraCSS.rules[i].style + "}"), newStyleSheet.sheet.cssRules.length);
+11<@>  } else {
+96<@>   outputHTML += MTMExtraCSS.rules[i].selector + ' {\n' + MTMExtraCSS.rules[i].style + '\n}\n';
+4<@>  }
+3<@> }
+36<@> if(MTMFirstRun && MTMUA.DOMable) {
+30<@>  with(MTMUA.document.body) {
+25<@>   bgColor = MTMBGColor;
+24<@>   text = MTMTextColor;
+24<@>   link = MTMLinkColor;
+25<@>   vLink = MTMLinkColor;
+25<@>   aLink = MTMLinkColor;
+23<@>   if(MTMBackground) {
+71<@>    background = MTMUA.preHREF + MTMenuImageDirectory + MTMBackground;
+5<@>   }
+4<@>  }
+29<@> } else if(!MTMUA.DOMable) {
+51<@>  MTMUA.document.writeln(outputHTML + '</style>');
+3<@> }
+2<@>}
+35<@>function MTMdisableStyleSheets() {
+33<@> if(MTMUA.browserType == "IE") {
+59<@>  for(i = 0; i < MTMUA.document.styleSheets.length; i++) {
+50<@>   MTMUA.document.styleSheets(i).disabled = true;
+4<@>  }
+40<@> } else if(MTMUA.browserType == "NN") {
+67<@>  var myCollection = MTMUA.document.getElementsByTagName('style');
+45<@>  for(i = 0; i < myCollection.length; i++) {
+41<@>   myCollection.item(i).disabled = true;
+4<@>  }
+66<@>  var myCollection = MTMUA.document.getElementsByTagName('link');
+45<@>  for(i = 0; i < myCollection.length; i++) {
+65<@>   if(myCollection.item(i).getAttribute('type') == "text/css") {
+42<@>    myCollection.item(i).disabled = true;
+5<@>   }
+4<@>  }
+3<@> }
+2<@>}
+29<@>function MTMFetchCookies() {
+46<@> var cookieString = getCookie(MTMCookieName);
+28<@> if(cookieString == null) {
+65<@>  setCookie(MTMCookieName, "Say-No-If-You-Use-Confirm-Cookies");
+43<@>  cookieString = getCookie(MTMCookieName);
+63<@>  MTMUA.cookieEnabled = (cookieString == null) ? false : true;
+10<@>  return;
+3<@> }
+33<@> MTMCookieString = cookieString;
+82<@> if(MTMTrackedCookieName) { MTMTrackedCookie = getCookie(MTMTrackedCookieName); }
+29<@> MTMUA.cookieEnabled = true;
+2<@>}
+27<@>function getCookie(Name) {
+25<@> var search = Name + "="
+35<@> if (document.cookie.length > 0) {
+43<@>  offset = document.cookie.indexOf(search)
+22<@>  if (offset != -1) {
+27<@>   offset += search.length
+46<@>   end = document.cookie.indexOf(";", offset)
+18<@>   if (end == -1)
+33<@>    end = document.cookie.length
+59<@>   return unescape(document.cookie.substring(offset, end))
+4<@>  }
+3<@> }
+2<@>}
+46<@>function setCookie(name, value, daysExpire) {
+18<@> if(daysExpire) {
+28<@>  var expires = new Date();
+65<@>  expires.setTime(expires.getTime() + 1000*60*60*24*daysExpire);
+3<@> }
+127<@> document.cookie = name + "=" + escape(value) + (daysExpire == null ? "" : (";expires=" + expires.toGMTString())) + ";path=/";
+2<@>}
+1<@>
+1<@>
+22<@>&*#@share.js@#*&29495
+1<@>
+1<@>
+36<@>function disableTextField (field) {
+46<@> if (document.all || document.getElementById)
+25<@>  field.disabled = true;
+8<@> else {
+36<@>  field.oldOnFocus = field.onfocus;
+24<@>  field.onfocus = skip;
+3<@> }
+2<@>}
+35<@>function enableTextField (field) {
+46<@> if (document.all || document.getElementById)
+26<@>  field.disabled = false;
+8<@> else {
+36<@>  field.onfocus = field.oldOnFocus;
+3<@> }
+2<@>}
+1<@>
+45<@>function Lan1NeqLan2(ip1, mask1, ip2, mask2)
+2<@>{
+30<@> d11 = getDigit(ip1.value,1);
+33<@> d12 = getDigit(mask1.value, 1);
+30<@> d21 = getDigit(ip2.value,1);
+32<@> d22 = getDigit(mask2.value,1);
+17<@> d1 = d11 & d12;
+17<@> d2 = d21 & d22;
+15<@> if (d1 != d2)
+15<@>  return true;
+1<@>
+30<@> d11 = getDigit(ip1.value,2);
+33<@> d12 = getDigit(mask1.value, 2);
+30<@> d21 = getDigit(ip2.value,2);
+32<@> d22 = getDigit(mask2.value,2);
+17<@> d1 = d11 & d12;
+17<@> d2 = d21 & d22;
+15<@> if (d1 != d2)
+15<@>  return true;
+1<@>
+30<@> d11 = getDigit(ip1.value,3);
+33<@> d12 = getDigit(mask1.value, 3);
+30<@> d21 = getDigit(ip2.value,3);
+32<@> d22 = getDigit(mask2.value,3);
+17<@> d1 = d11 & d12;
+17<@> d2 = d21 & d22;
+15<@> if (d1 != d2)
+15<@>  return true;
+1<@>
+30<@> d11 = getDigit(ip1.value,4);
+33<@> d12 = getDigit(mask1.value, 4);
+30<@> d21 = getDigit(ip2.value,4);
+32<@> d22 = getDigit(mask2.value,4);
+17<@> d1 = d11 & d12;
+17<@> d2 = d21 & d22;
+15<@> if (d1 != d2)
+15<@>  return true;
+1<@>
+15<@> return false;
+2<@>}
+1<@>
+46<@>function disableRadioGroup (radioArrOrButton)
+2<@>{
+67<@>  if (radioArrOrButton.type && radioArrOrButton.type == "radio") {
+44<@>        var radioButton = radioArrOrButton;
+61<@>        var radioArray = radioButton.form[radioButton.name];
+4<@>  }
+7<@>  else
+43<@>        var radioArray = radioArrOrButton;
+36<@>        radioArray.disabled = true;
+54<@>        for (var b = 0; b < radioArray.length; b++) {
+37<@>        if (radioArray[b].checked) {
+59<@>                radioArray.checkedElement = radioArray[b];
+23<@>                break;
+10<@>        }
+4<@>  }
+48<@>  for (var b = 0; b < radioArray.length; b++) {
+39<@>        radioArray[b].disabled = true;
+66<@>        radioArray[b].checkedElement = radioArray.checkedElement;
+4<@>  }
+2<@>}
+1<@>
+45<@>function enableRadioGroup (radioArrOrButton)
+2<@>{
+67<@>  if (radioArrOrButton.type && radioArrOrButton.type == "radio") {
+44<@>        var radioButton = radioArrOrButton;
+61<@>        var radioArray = radioButton.form[radioButton.name];
+4<@>  }
+7<@>  else
+43<@>        var radioArray = radioArrOrButton;
+1<@>
+31<@>  radioArray.disabled = false;
+36<@>  radioArray.checkedElement = null;
+48<@>  for (var b = 0; b < radioArray.length; b++) {
+40<@>        radioArray[b].disabled = false;
+45<@>        radioArray[b].checkedElement = null;
+4<@>  }
+2<@>}
+1<@>
+38<@>function disableCheckBox (checkBox) {
+28<@>  if (!checkBox.disabled) {
+30<@>    checkBox.disabled = true;
+53<@>    if (!document.all && !document.getElementById) {
+48<@>      checkBox.storeChecked = checkBox.checked;
+46<@>      checkBox.oldOnClick = checkBox.onclick;
+35<@>      checkBox.onclick = preserve;
+6<@>    }
+4<@>  }
+2<@>}
+1<@>
+35<@>function enableCheckBox (checkBox)
+2<@>{
+27<@>  if (checkBox.disabled) {
+31<@>    checkBox.disabled = false;
+51<@>    if (!document.all && !document.getElementById)
+46<@>      checkBox.onclick = checkBox.oldOnClick;
+4<@>  }
+2<@>}
+1<@>
+1<@>
+42<@>function check_wps_enc(enc, radius, auth)
+2<@>{
+36<@>        if (enc == 0 || enc == 1) {
+33<@>                if (radius != 0)
+34<@>                        return 2;
+10<@>        }
+15<@>        else {
+30<@>                if (auth & 1)
+34<@>                        return 2;
+10<@>        }
+18<@>        return 0;
+2<@>}
+1<@>
+38<@>function check_wps_wlanmode(mo, type)
+2<@>{
+23<@>        if (mo == 2) {
+26<@>                return 1;
+10<@>        }
+36<@>        if (mo == 1 && type != 0) {
+26<@>                return 1;
+10<@>        }
+18<@>        return 0;
+2<@>}
+1<@>
+1<@>
+28<@>function getDigit(str, num)
+2<@>{
+7<@>  i=1;
+20<@>  if ( num != 1 ) {
+37<@>   while (i!=num && str.length!=0) {
+32<@>  if ( str.charAt(0) == '.' ) {
+8<@>   i++;
+4<@>  }
+26<@>  str = str.substring(1);
+5<@>   }
+17<@>   if ( i!=num )
+15<@>    return -1;
+4<@>  }
+33<@>  for (i=0; i<str.length; i++) {
+33<@>   if ( str.charAt(i) == '.' ) {
+29<@>  str = str.substring(0, i);
+9<@>  break;
+3<@> }
+4<@>  }
+24<@>  if ( str.length == 0)
+14<@>   return -1;
+25<@>  d = parseInt(str, 10);
+12<@>  return d;
+2<@>}
+1<@>
+34<@>function getDigitforMac(str, num)
+2<@>{
+7<@>  i=1;
+20<@>  if ( num != 1 ) {
+37<@>   while (i!=num && str.length!=0) {
+32<@>  if ( str.charAt(0) == '-' ) {
+8<@>   i++;
+4<@>  }
+26<@>  str = str.substring(1);
+5<@>   }
+17<@>   if ( i!=num )
+15<@>    return -1;
+4<@>  }
+33<@>  for (i=0; i<str.length; i++) {
+33<@>   if ( str.charAt(i) == '-' ) {
+29<@>  str = str.substring(0, i);
+9<@>  break;
+3<@> }
+4<@>  }
+24<@>  if ( str.length == 0)
+14<@>   return -1;
+25<@>  d = parseInt(str, 10);
+12<@>  return d;
+2<@>}
+1<@>
+26<@>function validateKey(str)
+2<@>{
+38<@>   for (var i=0; i<str.length; i++) {
+59<@>    if ( (str.charAt(i) >= '0' && str.charAt(i) <= '9') ||
+32<@>      (str.charAt(i) == '.' ) )
+13<@>   continue;
+11<@> return 0;
+4<@>  }
+12<@>  return 1;
+2<@>}
+1<@>
+28<@>function validateDigit(str)
+2<@>{
+83<@> if ((str.charAt(0) == '0') && ((str.charAt(1) == 'x') || (str.charAt(1) == 'X')))
+3<@> {
+35<@>  for (var i=2; i<str.length; i++)
+4<@>  {
+58<@>   if ( (str.charAt(i) >= '0' && str.charAt(i) <= '9') ||
+53<@>    (str.charAt(i) >= 'A' && str.charAt(i) <= 'F')||
+53<@>    (str.charAt(i) >= 'a' && str.charAt(i) <= 'f') )
+14<@>    continue;
+13<@>   return 0;
+4<@>  }
+10<@> } else {
+35<@>  for (var i=2; i<str.length; i++)
+4<@>  {
+54<@>   if ( str.charAt(i) >= '0' && str.charAt(i) <= '9')
+14<@>    continue;
+13<@>   return 0;
+4<@>  }
+3<@> }
+11<@> return 1;
+2<@>}
+1<@>
+35<@>function validateDecimalDigit(str)
+2<@>{
+34<@> for (var i=0; i<str.length; i++)
+3<@> {
+53<@>  if ( str.charAt(i) >= '0' && str.charAt(i) <= '9')
+13<@>   continue;
+12<@>  return 0;
+3<@> }
+11<@> return 1;
+2<@>}
+1<@>
+33<@>function getDigitFromString(str)
+2<@>{
+8<@> var d;
+1<@>
+23<@> if ( str.length == 0)
+13<@>  return -1;
+1<@>
+83<@> if ((str.charAt(0) == '0') && ((str.charAt(1) == 'x') || (str.charAt(1) == 'X')))
+25<@>  d = parseInt(str, 16);
+6<@> else
+25<@>  d = parseInt(str, 10);
+1<@>
+11<@> return d;
+2<@>}
+1<@>
+1<@>
+27<@>function validateKey2(str)
+2<@>{
+38<@>   for (var i=0; i<str.length; i++) {
+59<@>    if ( (str.charAt(i) >= '0' && str.charAt(i) <= '9') ||
+33<@>      (str.charAt(i) == '-' ) ||
+55<@>      (str.charAt(i) >= 'A' && str.charAt(i) <= 'F')||
+55<@>      (str.charAt(i) >= 'a' && str.charAt(i) <= 'f') )
+13<@>   continue;
+11<@> return 0;
+4<@>  }
+12<@>  return 1;
+2<@>}
+1<@>
+27<@>function IsLoopBackIP(str)
+2<@>{
+22<@> d = getDigit(str,1);
+12<@> if(d==127)
+12<@>  return 1;
+11<@> return 0;
+2<@>}
+1<@>
+45<@>function checkDigitRange(str, num, min, max)
+2<@>{
+25<@>  d = getDigit(str,num);
+28<@>  if ( d > max || d < min )
+21<@>       return false;
+15<@>  return true;
+2<@>}
+1<@>
+51<@>function checkDigitRangeforMac(str, num, min, max)
+2<@>{
+31<@>  d = getDigitforMac(str,num);
+28<@>  if ( d > max || d < min )
+21<@>       return false;
+15<@>  return true;
+2<@>}
+1<@>
+21<@>function checkIP(ip)
+2<@>{
+21<@> if (ip.value=="") {
+16<@>  alert@#$2@#$;
+30<@>  ip.value = ip.defaultValue;
+14<@>  ip.focus();
+16<@>  return false;
+3<@> }
+1<@>
+1<@>
+1<@>
+1<@>
+1<@>
+1<@>
+1<@>
+19<@> var str=ip.value;
+14<@> var count=0;
+34<@> for (var i=0; i<str.length; i++)
+3<@> {
+56<@>  if ( (str.charAt(i) >= '0' && str.charAt(i) <= '9') )
+13<@>   continue;
+28<@>  if (str.charAt(i) == '.')
+4<@>  {
+12<@>   count++;
+13<@>   continue;
+4<@>  }
+16<@>  alert@#$7@#$;
+30<@>  ip.value = ip.defaultValue;
+14<@>  ip.focus();
+16<@>  return false;
+3<@> }
+14<@> if(count!=3)
+3<@> {
+16<@>  alert@#$6@#$;
+14<@>  ip.focus();
+16<@>  return false;
+3<@> }
+1<@>
+36<@> if( IsLoopBackIP( ip.value)==1 ) {
+17<@>  alert@#$20@#$;
+30<@>  ip.value = ip.defaultValue;
+14<@>  ip.focus();
+16<@>  return false;
+3<@> }
+1<@>
+45<@> if ( !checkDigitRange(ip.value,1,1,223) ) {
+16<@>  alert@#$8@#$;
+30<@>  ip.value = ip.defaultValue;
+14<@>  ip.focus();
+16<@>  return false;
+3<@> }
+45<@> if ( !checkDigitRange(ip.value,2,0,255) ) {
+16<@>  alert@#$9@#$;
+30<@>  ip.value = ip.defaultValue;
+14<@>  ip.focus();
+16<@>  return false;
+3<@> }
+45<@> if ( !checkDigitRange(ip.value,3,0,255) ) {
+17<@>  alert@#$10@#$;
+30<@>  ip.value = ip.defaultValue;
+14<@>  ip.focus();
+16<@>  return false;
+3<@> }
+45<@> if ( !checkDigitRange(ip.value,4,1,254) ) {
+17<@>  alert@#$11@#$;
+30<@>  ip.value = ip.defaultValue;
+14<@>  ip.focus();
+16<@>  return false;
+3<@> }
+1<@>
+14<@> return true;
+2<@>}
+1<@>
+29<@>function checkNotEmptyIP(ip)
+2<@>{
+21<@> if (ip.value=="") {
+1<@>
+15<@>  return true;
+3<@> }
+1<@>
+1<@>
+1<@>
+1<@>
+1<@>
+1<@>
+1<@>
+19<@> var str=ip.value;
+14<@> var count=0;
+34<@> for (var i=0; i<str.length; i++)
+3<@> {
+56<@>  if ( (str.charAt(i) >= '0' && str.charAt(i) <= '9') )
+13<@>   continue;
+28<@>  if (str.charAt(i) == '.')
+4<@>  {
+12<@>   count++;
+13<@>   continue;
+4<@>  }
+16<@>  alert@#$7@#$;
+30<@>  ip.value = ip.defaultValue;
+14<@>  ip.focus();
+16<@>  return false;
+3<@> }
+14<@> if(count!=3)
+3<@> {
+16<@>  alert@#$6@#$;
+14<@>  ip.focus();
+16<@>  return false;
+3<@> }
+1<@>
+36<@> if( IsLoopBackIP( ip.value)==1 ) {
+17<@>  alert@#$20@#$;
+30<@>  ip.value = ip.defaultValue;
+14<@>  ip.focus();
+16<@>  return false;
+3<@> }
+1<@>
+45<@> if ( !checkDigitRange(ip.value,1,1,223) ) {
+16<@>  alert@#$8@#$;
+30<@>  ip.value = ip.defaultValue;
+14<@>  ip.focus();
+16<@>  return false;
+3<@> }
+45<@> if ( !checkDigitRange(ip.value,2,0,255) ) {
+16<@>  alert@#$9@#$;
+30<@>  ip.value = ip.defaultValue;
+14<@>  ip.focus();
+16<@>  return false;
+3<@> }
+45<@> if ( !checkDigitRange(ip.value,3,0,255) ) {
+17<@>  alert@#$10@#$;
+30<@>  ip.value = ip.defaultValue;
+14<@>  ip.focus();
+16<@>  return false;
+3<@> }
+45<@> if ( !checkDigitRange(ip.value,4,1,254) ) {
+17<@>  alert@#$11@#$;
+30<@>  ip.value = ip.defaultValue;
+14<@>  ip.focus();
+16<@>  return false;
+3<@> }
+1<@>
+14<@> return true;
+2<@>}
+1<@>
+1<@>
+42<@>function checkNetworkByMask(ip1,ip2,mask)
+2<@>{
+27<@>  ip1_1 = getDigit(ip1,1);
+27<@>  ip1_2 = getDigit(ip1,2);
+27<@>  ip1_3 = getDigit(ip1,3);
+27<@>  ip1_4 = getDigit(ip1,4);
+27<@>  ip2_1 = getDigit(ip2,1);
+27<@>  ip2_2 = getDigit(ip2,2);
+27<@>  ip2_3 = getDigit(ip2,3);
+27<@>  ip2_4 = getDigit(ip2,4);
+29<@>  mask_1 = getDigit(mask,1);
+29<@>  mask_2 = getDigit(mask,2);
+29<@>  mask_3 = getDigit(mask,3);
+29<@>  mask_4 = getDigit(mask,4);
+1<@>
+74<@>  if(((ip1_1&mask_1) !=(ip2_1&mask_1))||((ip1_2&mask_2) !=(ip2_2&mask_2))
+75<@>   ||((ip1_3&mask_3) !=(ip2_3&mask_3))||((ip1_4&mask_4) !=(ip2_4&mask_4)))
+17<@>   return false;
+1<@>
+15<@>  return true;
+2<@>}
+1<@>
+1<@>
+31<@>function checkNetwork(ip1,ip2)
+2<@>{
+27<@>  ip_n = getDigit(ip1, 1);
+27<@>  ip1_1 = getDigit(ip1,1);
+27<@>  ip1_2 = getDigit(ip1,2);
+27<@>  ip1_3 = getDigit(ip1,3);
+27<@>  ip1_4 = getDigit(ip1,4);
+27<@>  ip2_1 = getDigit(ip2,1);
+27<@>  ip2_2 = getDigit(ip2,2);
+27<@>  ip2_3 = getDigit(ip2,3);
+27<@>  ip2_4 = getDigit(ip2,4);
+27<@>  if(ip_n>=1 && ip_n<=126)
+4<@>  {
+118<@>   if(ip1_1 != ip2_1 || ip1_2>ip2_2 || (ip1_2==ip2_2 && ip1_3>ip2_3) ||(ip1_2==ip2_2 && ip1_3==ip2_3 && ip1_4>ip2_4))
+18<@>    return false;
+4<@>  }
+34<@>  else if(ip_n>=128 && ip_n<=191)
+4<@>  {
+84<@>   if(ip1_1!=ip2_1 || ip1_2!=ip2_2 || ip1_3>ip2_3 || (ip1_3==ip2_3 && ip1_4>ip2_4))
+18<@>    return false;
+4<@>  }
+34<@>  else if(ip_n>=192 && ip_n<=223)
+5<@>   {
+67<@>   if(ip1_1!=ip2_1 || ip1_2!=ip2_2 || ip1_3!=ip2_3 || ip1_4>ip2_4)
+18<@>    return false;
+4<@>  }
+7<@>  else
+22<@>        return false;
+1<@>
+15<@>  return true;
+2<@>}
+1<@>
+28<@>function checkMask(netmask)
+2<@>{
+68<@>   var str = new Array("", @#$23@#$, @#$24@#$, @#$25@#$, @#$26@#$);
+11<@> var i, d;
+10<@> var s,m;
+26<@> if (netmask.value=="") {
+16<@>  alert@#$1@#$;
+40<@>  netmask.value = netmask.defaultValue;
+19<@>  netmask.focus();
+16<@>  return false;
+3<@> }
+25<@> var str2=netmask.value;
+14<@> var count=0;
+31<@> for (i=0; i<str2.length; i++)
+3<@> {
+58<@>  if ( (str2.charAt(i) >= '0' && str2.charAt(i) <= '9') )
+13<@>   continue;
+29<@>  if (str2.charAt(i) == '.')
+4<@>  {
+12<@>   count++;
+13<@>   continue;
+4<@>  }
+16<@>  alert@#$3@#$;
+20<@>   netmask.focus();
+17<@>   return false;
+4<@>  }
+14<@> if(count!=3)
+3<@> {
+16<@>  alert@#$4@#$;
+19<@>  netmask.focus();
+16<@>  return false;
+3<@> }
+22<@> for (i=1; i<=4; i++)
+3<@> {
+33<@>  d = getDigit(netmask.value,i);
+98<@>  if( !(d==0 || d==128 || d==192 || d==224 || d==240 || d==248 || d==252 || d==254 || d==255 )) {
+17<@>   alert@#$0@#$;
+20<@>   netmask.focus();
+17<@>   return false;
+4<@>  }
+13<@>  if(d!=255)
+4<@>  {
+23<@>   for(m=i+1;m<=4;m++)
+5<@>   {
+33<@>    s=getDigit(netmask.value,m);
+13<@>    if(s!=0)
+6<@>    {
+20<@>     alert@#$21@#$;
+22<@>     netmask.focus();
+19<@>     return false;
+6<@>    }
+5<@>   }
+16<@>   return true;
+4<@>  }
+3<@> }
+14<@> return true;
+2<@>}
+35<@>function checkMaskSpecial(netmask)
+2<@>{
+67<@>  var str = new Array("", @#$23@#$, @#$24@#$, @#$25@#$, @#$26@#$);
+26<@>  var str2=netmask.value;
+12<@>  var i, d;
+12<@>   var s,m;
+16<@>   var count=0;
+20<@>   var d1,d2,d3,d4;
+28<@>   if (netmask.value=="") {
+16<@>  alert@#$1@#$;
+40<@>  netmask.value = netmask.defaultValue;
+19<@>  netmask.focus();
+16<@>  return false;
+3<@> }
+31<@> for (i=0; i<str2.length; i++)
+3<@> {
+58<@>  if ( (str2.charAt(i) >= '0' && str2.charAt(i) <= '9') )
+13<@>   continue;
+29<@>  if (str2.charAt(i) == '.')
+4<@>  {
+12<@>   count++;
+13<@>   continue;
+4<@>  }
+16<@>  alert@#$3@#$;
+20<@>   netmask.focus();
+17<@>   return false;
+4<@>  }
+14<@> if(count!=3)
+3<@> {
+16<@>  alert@#$4@#$;
+19<@>  netmask.focus();
+16<@>  return false;
+3<@> }
+33<@> d1 = getDigit(netmask.value,1);
+33<@> d2 = getDigit(netmask.value,2);
+33<@> d3 = getDigit(netmask.value,3);
+33<@> d4 = getDigit(netmask.value,4);
+40<@> if((d1==0)&&(d2==0)&&(d3==0)&&(d4==0))
+3<@> {
+17<@>  alert@#$15@#$;
+19<@>  netmask.focus();
+16<@>  return false;
+3<@> }
+48<@> if((d1==255)&&(d2==255)&&(d3==255)&&(d4==255))
+3<@> {
+17<@>  alert@#$12@#$;
+19<@>  netmask.focus();
+16<@>  return false;
+3<@> }
+22<@> for (i=1; i<=4; i++)
+3<@> {
+33<@>  d = getDigit(netmask.value,i);
+98<@>  if( !(d==0 || d==128 || d==192 || d==224 || d==240 || d==248 || d==252 || d==254 || d==255 )) {
+17<@>   alert@#$0@#$;
+20<@>   netmask.focus();
+17<@>   return false;
+4<@>  }
+13<@>  if(d!=255)
+4<@>  {
+23<@>   for(m=i+1;m<=4;m++)
+5<@>   {
+33<@>    s=getDigit(netmask.value,m);
+13<@>    if(s!=0)
+6<@>    {
+20<@>     alert@#$21@#$;
+22<@>     netmask.focus();
+19<@>     return false;
+6<@>    }
+5<@>   }
+16<@>   return true;
+4<@>  }
+3<@> }
+14<@> return true;
+2<@>}
+27<@>function includeSpace(str)
+2<@>{
+37<@>  for (var i=0; i<str.length; i++) {
+33<@>   if ( str.charAt(i) == ' ' ) {
+16<@>   return true;
+3<@> }
+4<@>  }
+16<@>  return false;
+2<@>}
+26<@>function checkString(str)
+2<@>{
+36<@> for (var i=0; i<str.length; i++) {
+156<@>  if ((str.charAt(i) >= '0' && str.charAt(i) <= '9') || (str.charAt(i) >= 'A' && str.charAt(i) <= 'Z') || (str.charAt(i) >= 'a' && str.charAt(i) <= 'z') ||
+185<@>     (str.charAt(i) == '.') || (str.charAt(i) == ':') || (str.charAt(i) == '-') || (str.charAt(i) == '_') || (str.charAt(i) == ' ') || (str.charAt(i) == '/') || (str.charAt(i) == '@'))
+13<@>   continue;
+12<@>  return 0;
+3<@> }
+11<@> return 1;
+2<@>}
+23<@>function deleteClick()
+2<@>{
+27<@> if ( !confirm@#$16@#$ ) {
+16<@>  return false;
+3<@> }
+6<@> else
+15<@>  return true;
+2<@>}
+26<@>function deleteAllClick()
+2<@>{
+27<@> if ( !confirm@#$17@#$ ) {
+16<@>  return false;
+3<@> }
+6<@> else
+15<@>  return true;
+2<@>}
+25<@>function delClick(index)
+2<@>{
+27<@> if ( !confirm@#$19@#$ ) {
+16<@>  return false;
+3<@> }
+37<@> document.actionForm.action.value=0;
+38<@> document.actionForm.idx.value=index;
+31<@> document.actionForm.submit();
+14<@> return true;
+2<@>}
+33<@>function delClick2(index,connid)
+2<@>{
+27<@> if ( !confirm@#$19@#$ ) {
+16<@>  return false;
+3<@> }
+37<@> document.actionForm.action.value=0;
+38<@> document.actionForm.idx.value=index;
+42<@> document.actionForm.connid.value=connid;
+31<@> document.actionForm.submit();
+14<@> return true;
+2<@>}
+26<@>function editClick(index)
+2<@>{
+37<@> document.actionForm.action.value=1;
+38<@> document.actionForm.idx.value=index;
+31<@> document.actionForm.submit();
+14<@> return true;
+2<@>}
+35<@>function editClick2(index, connid)
+2<@>{
+41<@>     document.actionForm.action.value=1;
+42<@>     document.actionForm.idx.value=index;
+46<@>     document.actionForm.connid.value=connid;
+35<@>     document.actionForm.submit();
+18<@>     return true;
+2<@>}
+27<@>function verifyBrowser() {
+48<@> var ms = navigator.appVersion.indexOf("MSIE");
+78<@> ie4 = (ms>0) && (parseInt(navigator.appVersion.substring(ms+5, ms+6)) >= 4);
+49<@> var ns = navigator.appName.indexOf("Netscape");
+68<@> ns= (ns>=0) && (parseInt(navigator.appVersion.substring(0,1))>=4);
+10<@> if (ie4)
+16<@>  return "ie4";
+6<@> else
+9<@>  if(ns)
+16<@>   return "ns";
+7<@>  else
+17<@>   return false;
+2<@>}
+26<@>function isBrowser(b,v) {
+20<@> browserOk = false;
+20<@> versionOk = false;
+51<@> browserOk = (navigator.appName.indexOf(b) != -1);
+31<@> if (v == 0) versionOk = true;
+57<@> else versionOk = (v <= parseInt(navigator.appVersion));
+32<@> return browserOk && versionOk;
+2<@>}
+34<@>function disableButton (button) {
+47<@>  if (document.all || document.getElementById)
+28<@>    button.disabled = true;
+21<@>  else if (button) {
+40<@>    button.oldOnClick = button.onclick;
+27<@>    button.onclick = null;
+36<@>    button.oldValue = button.value;
+29<@>    button.value = @#$22@#$;
+4<@>  }
+2<@>}
+36<@>function disableButtonIB (button) {
+31<@> if (isBrowser('Netscape', 0))
+3<@> {
+26<@>  button.disabled = true;
+10<@>  return;
+3<@> }
+46<@> if (document.all || document.getElementById)
+26<@>  button.disabled = true;
+20<@> else if (button) {
+38<@>  button.oldOnClick = button.onclick;
+25<@>  button.onclick = null;
+34<@>  button.oldValue = button.value;
+27<@>  button.value = @#$22@#$;
+3<@> }
+2<@>}
+36<@>function disableButtonVB (button) {
+31<@>  if (verifyBrowser() == "ns")
+11<@>   return;
+47<@>  if (document.all || document.getElementById)
+28<@>    button.disabled = true;
+21<@>  else if (button) {
+40<@>    button.oldOnClick = button.onclick;
+27<@>    button.onclick = null;
+36<@>    button.oldValue = button.value;
+29<@>    button.value = @#$22@#$;
+4<@>  }
+2<@>}
+33<@>function enableButton (button) {
+47<@>  if (document.all || document.getElementById)
+29<@>    button.disabled = false;
+21<@>  else if (button) {
+40<@>    button.onclick = button.oldOnClick;
+36<@>    button.value = button.oldValue;
+4<@>  }
+2<@>}
+35<@>function enableButtonVB (button) {
+31<@>  if (verifyBrowser() == "ns")
+11<@>   return;
+47<@>  if (document.all || document.getElementById)
+29<@>    button.disabled = false;
+21<@>  else if (button) {
+40<@>    button.onclick = button.oldOnClick;
+36<@>    button.value = button.oldValue;
+4<@>  }
+2<@>}
+35<@>function enableButtonIB (button) {
+31<@> if (isBrowser('Netscape', 4))
+28<@> { button.disabled = false;
+10<@>  return;
+3<@> }
+46<@> if (document.all || document.getElementById)
+27<@>  button.disabled = false;
+20<@> else if (button) {
+38<@>  button.onclick = button.oldOnClick;
+34<@>  button.value = button.oldValue;
+3<@> }
+2<@>}
+40<@>function checkFormatUnicastMac(macaddr)
+2<@>{
+26<@> var str = macaddr.value;
+23<@> if ( str.length < 17)
+3<@> {
+17<@>  alert@#$13@#$;
+19<@>  macaddr.focus();
+16<@>  return false;
+3<@> }
+32<@> if(str == "00:00:00:00:00:00")
+3<@> {
+24<@>         alert@#$14@#$;
+23<@>         return false;
+4<@>  }
+14<@> var count=0;
+34<@> for (var i=0; i<str.length; i++)
+3<@> {
+57<@>  if ( (str.charAt(i) >= '0' && str.charAt(i) <= '9') ||
+53<@>   (str.charAt(i) >= 'a' && str.charAt(i) <= 'f') ||
+52<@>   (str.charAt(i) >= 'A' && str.charAt(i) <= 'F') )
+13<@>   continue;
+28<@>  if (str.charAt(i) == ':')
+4<@>  {
+12<@>   count++;
+13<@>   continue;
+4<@>  }
+16<@>  alert@#$5@#$;
+19<@>  macaddr.focus();
+16<@>  return false;
+3<@> }
+14<@> if(count!=5)
+3<@> {
+16<@>  alert@#$5@#$;
+19<@>  macaddr.focus();
+16<@>  return false;
+3<@> }
+21<@> if(str.charAt(1)&1)
+3<@> {
+17<@>  alert@#$18@#$;
+19<@>  macaddr.focus();
+16<@>  return false;
+3<@> }
+14<@> return true;
+2<@>}
+27<@>function checkMac(macaddr)
+2<@>{
+26<@> var str = macaddr.value;
+23<@> if ( str.length < 17)
+3<@> {
+17<@>  alert@#$13@#$;
+19<@>  macaddr.focus();
+16<@>  return false;
+3<@> }
+32<@> if(str == "00:00:00:00:00:00")
+3<@> {
+24<@>         alert@#$14@#$;
+16<@>  return false;
+3<@> }
+14<@> var count=0;
+34<@> for (var i=0; i<str.length; i++)
+3<@> {
+57<@>  if ( (str.charAt(i) >= '0' && str.charAt(i) <= '9') ||
+53<@>   (str.charAt(i) >= 'a' && str.charAt(i) <= 'f') ||
+52<@>   (str.charAt(i) >= 'A' && str.charAt(i) <= 'F') )
+13<@>   continue;
+28<@>  if (str.charAt(i) == ':')
+4<@>  {
+12<@>   count++;
+13<@>   continue;
+3<@> }
+16<@>  alert@#$5@#$;
+19<@>  macaddr.focus();
+16<@>  return false;
+3<@> }
+14<@> if(count!=5)
+3<@> {
+16<@>  alert@#$5@#$;
+19<@>  macaddr.focus();
+16<@>  return false;
+3<@> }
+14<@> return true;
+2<@>}
+51<@>function checkMacWithoutColon(macAddr, checkEmpty)
+2<@>{
+22<@> var i, macdigit = 0;
+53<@> if (checkEmpty == 1 && macAddr.value.length == 0) {
+16<@>  return false;
+3<@> }
+45<@> if(!checkEmpty&& macAddr.value.length == 0)
+15<@>  return true;
+35<@> var allZeroPattern = /^[0]{12}$/;
+56<@> if (allZeroPattern.exec(macAddr.value)) return false ;
+67<@> var macPattern=/^[0-9a-fA-F]{1}[02468aAcCeE]{1}[0-9a-fA-F]{10}$/;
+53<@> if (!macPattern.exec(macAddr.value)) return false ;
+36<@> var broadcastpattern=/^[fF]{12}$/;
+58<@> if (broadcastpattern.exec(macAddr.value)) return false ;
+14<@> return true;
+2<@>}
+25<@>function routeClick(url)
+2<@>{
+15<@> var wide=600;
+15<@> var high=400;
+19<@> if (document.all)
+49<@>  var xMax = screen.width, yMax = screen.height;
+27<@> else if (document.layers)
+59<@>  var xMax = window.outerWidth, yMax = window.outerHeight;
+6<@> else
+30<@>    var xMax = 640, yMax=480;
+32<@> var xOffset = (xMax - wide)/2;
+32<@> var yOffset = (yMax - high)/3;
+213<@> var settings = 'width='+wide+',height='+high+',screenX='+xOffset+',screenY='+yOffset+',top='+yOffset+',left='+xOffset+', resizable=yes, toolbar=no,location=no,b='+yOffset+') s=getDi2@#$;
+op='+yOffset+',left='+xOy,,,,,,,,,,,,,,',left='+2 0;
+3<@> }
+11<@> ret;
+35<'et+') s=g^`d+0d+0d+0d+03str.lengto;screenY='index;42<@Oy,,,,,,,!er + '"7':ft='+2@>}
+26<@>6<,,!er + ':7':=no,b='+yOffset+') s=getDi2@#$;
+op='+='+yO'+2Oy,,,,,,<@>  mask_3 = getDigiek_3 =igieb3<@> }':=no,@> }
+0'" ';
+='+etDigiek@3 ? Yx='+='+yOaz9') )9') ,9')2;0r ==-"00:00:00:00:0031'+yOazx='+='+yO^z9') )9') ,9')2;0r ==-"00:00:') )9•) ,9')2;0
